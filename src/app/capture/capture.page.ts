@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
+import {PhotoService} from '../photo.service'
 
 @Component({
   selector: 'app-capture',
@@ -12,9 +13,14 @@ import { IonicModule } from '@ionic/angular';
 })
 export class CapturePage implements OnInit {
 
-  constructor() { }
+  constructor(private photoService : PhotoService) { }
 
   ngOnInit() {
+
+  }
+
+  openCamera(){
+    this.photoService.takePhoto()
   }
 
 }
