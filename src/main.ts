@@ -10,7 +10,7 @@ import { environment } from './environments/environment';
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { getStorage, provideStorage } from '@angular/fire/storage';
-
+import { firebaseConfig } from '../src/firebaseconfig'
 if (environment.production) {
   enableProdMode();
 }
@@ -21,7 +21,7 @@ bootstrapApplication(AppComponent, {
     provideIonicAngular(),
     provideRouter(routes),
     importProvidersFrom(provideFirebaseApp(() =>
-      initializeApp(<firebaseConfig>))),
+      initializeApp(firebaseConfig))),
     importProvidersFrom(provideFirestore(() => getFirestore())),
     importProvidersFrom(provideStorage(() => getStorage()))
   ],
