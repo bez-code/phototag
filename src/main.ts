@@ -26,3 +26,4 @@ bootstrapApplication(AppComponent, {
     importProvidersFrom(provideStorage(() => getStorage()))
   ],
 });
+(window as Record<string, any>)['CESIUM_BASE_URL'] = '/assets/cesium/';
